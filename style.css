@@ -1,6 +1,13 @@
+@import "xterm.css";
+
 body {
     background: rgb(117,116,134);
     background: radial-gradient(circle, rgba(117,116,134,0.1) 0%, rgba(86,86,120,0.1) 50%, rgba(56,62,99,0.1) 100%);
+    overflow: hidden;
+}
+
+body.term {
+    background: black;
 }
 
 .content {
@@ -40,4 +47,14 @@ body {
 mark {
     color: rgb(77,76,94);
     background: inherit;
+}
+
+#terminal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
 }
