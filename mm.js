@@ -2,9 +2,10 @@ let term = null;
 let buffer = "";
 
 const commands = {
-    "help": "Known commands: 'help', 'cat', 'man', 'whoami'",
+    "help": "Known commands: 'cat', 'help', 'mail', 'man', 'whoami'",
     "man": "yes",
     "cat": "no",
+    "mail": "personal: marusak.matej@gmail.com\nwork: mmarusak@redhat.com",
 }
 
 function whoami(opt) {
