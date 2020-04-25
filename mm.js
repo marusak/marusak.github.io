@@ -2,10 +2,17 @@ let term = null;
 let buffer = "";
 
 const commands = {
-    "help": "Known commands: 'cat', 'help', 'mail', 'man', 'whoami'",
+    "help": "Known commands: 'cat', 'help', 'locale', 'mail', 'man', 'whoami'",
     "man": "yes",
     "cat": "no",
     "mail": "personal: marusak.matej@gmail.com\nwork: mmarusak@redhat.com",
+    "locale": `LANG_NATIVE=sk_SK.UTF-8
+LANG_C1_LEVEL=en_US.UTF-8
+LANG_B1_LEVEL=de_de.UTF-8
+LC_TIME="UTC+1"
+LC_NAME="Matej Marušák"
+LC_ADDRESS="Brno, Czech Republic"
+C="sure"`,
 }
 
 function whoami(opt) {
