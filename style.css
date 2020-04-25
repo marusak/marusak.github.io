@@ -30,9 +30,11 @@ body {
 }
 
 .note {
-    display: inline-block;
+    position: absolute;
     color: rgb(117,116,134);
     opacity: 0.9;
+    top: 80vh;
+    left: 45vw;
 }
 
 mark {
