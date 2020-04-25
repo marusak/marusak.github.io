@@ -2,16 +2,40 @@ let term = null;
 let buffer = "";
 
 const commands = {
-    "help": "Known commands: 'help', 'cat', 'man', 'mm'",
+    "help": "Known commands: 'help', 'cat', 'man', 'whoami'",
     "man": "yes",
     "cat": "no",
-    "mm": "Hey, my name is Matej Marusak and I do some stuff on computers",
+}
+
+function whoami(opt) {
+    switch(opt) {
+        case "--help":
+            term.write(`
+Usage: whoami [OPTION]
+Get info about me.
+
+    --photo    Display photo. (Needs at least 120 characters wide screen)
+    --help     display this help and exit
+`);
+            break;
+        case "--photo":
+            term.write(photo);
+            break;
+        default:
+            term.write("\nHey, my name is Matej Marusak and I do computer stuff. See '--help' for more info.");
+    }
 }
 
 function do_cmd() {
     if (buffer) {
         const cmd = buffer.split(" ")[0];
-        if (commands[cmd])
+        if (cmd === "whoami") {
+            const command = buffer.split(" ");
+            if (command.length > 2)
+                term.write("\n Unsupported combination of options. See '--help'.");
+            else
+                whoami(command.length === 2 ? command[1] : null)
+        } else if (commands[cmd])
             term.write("\n" + commands[cmd]);
         else
             term.write("\n" + cmd +": command not found");
@@ -54,7 +78,7 @@ function attach_terminal() {
         // TODO assuming one character, might be a string though
         if (data === "\r")
             do_cmd();
-        else if (data.toUpperCase() != data.toLowerCase()) { // Ignore CTRL+C and stuff
+        else {
             buffer += data;
             term.write(data);
         }
