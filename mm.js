@@ -23,9 +23,30 @@ Usage: whoami [OPTION]
 Get info about me.
 
     --edu      list my education
+    --work     list my work experience
     --photo    display photo (needs at least 120 characters wide screen)
     --help     display this help and exit
 `);
+            break;
+        case "--work":
+            term.write(`
+Feb 2019 -      Now   Software Engineer - Red Hat EMEA
+    Developer working on Cockpit project.
+
+May 2017 - Jan 2019   Associate Software Engineer - Red Hat EMEA
+    Develop and maintain Fedora and Red Hat Enterprise Linux components of ABRT.
+
+Jun 2016 - Apr 2017   Software Engineer Internship - Red Hat EMEA
+    Bug fixing and developing new features mainly in Python.
+
+Jan 2018 -      Now   Software Developer - Czech University of Life Science Prague
+    Design and implement web application for management of tree nurseries.
+
+Jan 2015 - Dec 2017   Software Developer - Czech University of Life Science Prague
+    Design and implement plugin for QGis in Python.
+
+Jan 2015 - Sep 2015   University research group member - Brno University of Technology
+    Python programming for parsing dictionaries.`);
             break;
         case "--edu":
             term.write(`
