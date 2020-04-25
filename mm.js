@@ -22,9 +22,16 @@ function whoami(opt) {
 Usage: whoami [OPTION]
 Get info about me.
 
-    --photo    Display photo. (Needs at least 120 characters wide screen)
+    --edu      list my education
+    --photo    display photo (needs at least 120 characters wide screen)
     --help     display this help and exit
 `);
+            break;
+        case "--edu":
+            term.write(`
+2017 - 2019: Engineer's degree @ 'Brno University of Technology' in Brno, Czech Republic
+2014 - 2017: Bachelor's degree @ 'Brno University of Technology' in Brno, Czech Republic
+2010 - 2014: Grammar school 'Gymnázium Andreja Vrábla' in Levice, Slovakia`);
             break;
         case "--photo":
             term.write(photo);
