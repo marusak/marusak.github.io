@@ -94,8 +94,11 @@ function attach_terminal() {
         if (data === "\r")
             do_cmd();
         else {
-            buffer += data;
-            term.write(data);
+            const k = data.charCodeAt();
+            if (k > 31 && k < 127) {
+                buffer += data;
+                term.write(data);
+            }
         }
     });
 
