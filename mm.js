@@ -11,7 +11,7 @@ LANG_C1_LEVEL=en_US.UTF-8
 LANG_B1_LEVEL=de_de.UTF-8
 LC_TIME="UTC+1"
 LC_NAME="Matej Marušák"
-LC_ADDRESS="Brno, Czech Republic"
+LC_ADDRESS="Prague, Czech Republic"
 C="sure"`,
 }
 
